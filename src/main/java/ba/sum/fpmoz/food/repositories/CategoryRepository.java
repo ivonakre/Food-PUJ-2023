@@ -1,0 +1,7 @@
+package ba.sum.fpmoz.food.repositories;
+
+import ba.sum.fpmoz.food.model.Category;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CategoryRepository extends JpaRepository <Category, Long>{
+}
