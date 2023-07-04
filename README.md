@@ -1,9 +1,7 @@
 # Programiranje u Javi
 
-**Naziv projekta:** 
-### Fast Food
+**Naziv projekta:** Fast Food
 
-**Demo programske podrške:** [Ovdje](http://204.216.215.115:8080) možete pronaći pokrenut primjerak programa.
 
 Korišteno je niz modernih tehnologija, uključujući:
 
@@ -16,7 +14,7 @@ Korišteno je niz modernih tehnologija, uključujući:
 
 
 
-Program koji su razvijeni u sklopu vježbi iz ovog kolegija predstavlja jednostavan, ali učinkovit sustav za upravljanje inventarom restorana. Aplikacija je oblikovana tako da pruža niz funkcionalnosti, uključujući:
+Aplikacija je oblikovana tako da pruža niz funkcionalnosti, uključujući:
 
 - Mogućnost registracije novih korisnika, uz rigoroznu validaciju unosa, kako bi se osigurao integritet korisničkih podataka.
 - Mogućnost prijave na sustav nakon uspješne registracije, omogućujući korisnicima pristup osobnim i profesionalnim resursima.

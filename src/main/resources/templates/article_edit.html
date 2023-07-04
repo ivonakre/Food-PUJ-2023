@@ -26,13 +26,6 @@
         <input class="form-control" th:classappend="${#fields.hasErrors('image') ? 'is-invalid' : ''}" type="file" name="file">
         <div th:if="${#fields.hasErrors('image')}" th:errors="*{image}" class="invalid-feedback"></div>
 
-        <label class="col-form-label">Odaberite kategoriju proizvoda</label>
-        <select class="form-control" th:classappend="${#fields.hasErrors('category') ? 'is-invalid' : ''}"  th:field="*{category}">
-          <option value="">Odaberite kategoriju</option>
-          <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
-        </select>
-        <div th:if="${#fields.hasErrors('category')}" th:errors="*{category}" class="invalid-feedback"></div>
-
         <button type="submit" class="btn btn-primary mt-3">Uredi proizvod</button>
       </form>
     </div>
