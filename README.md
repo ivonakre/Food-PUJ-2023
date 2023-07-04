@@ -3,7 +3,6 @@
 **Naziv projekta:** 
 ### Fast Food
 
-**Demo programske podrške:** [Ovdje](http://204.216.215.115:8080) možete pronaći pokrenut primjerak programa.
 
 Korišteno je niz modernih tehnologija, uključujući:
 
