@@ -1,7 +1,6 @@
 # Programiranje u Javi
 
-**Naziv projekta:** 
-### Fast Food
+**Naziv projekta:** Fast Food
 
 
 Korišteno je niz modernih tehnologija, uključujući:
