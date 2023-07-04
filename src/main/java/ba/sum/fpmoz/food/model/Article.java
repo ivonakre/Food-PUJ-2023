@@ -30,13 +30,6 @@ public class Article {
     @Column(nullable = false)
     String image;
 
-    @NotNull(message = "Molimo odaberite kategoriju proizvoda.")
-    @ManyToOne
-    @JoinColumn(name="category_id", nullable = false)
-    Category category;
-
-    @ManyToMany(mappedBy = "articles")
-    List<Invoice> invoices;
 
     public Article() {
     }
@@ -89,19 +82,4 @@ public class Article {
         this.image = image;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public List<Invoice> getInvoices() {
-        return invoices;
-    }
-
-    public void setInvoices(List<Invoice> invoices) {
-        this.invoices = invoices;
-    }
 }

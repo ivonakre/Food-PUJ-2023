@@ -17,7 +17,6 @@
     <td>Naziv</td>
     <td>Opis</td>
     <td>Cijena</td>
-    <td>Jedinica</td>
     <td>Slika</td>
     <td style="width: 10%">Akcije</td>
   </tr>
@@ -62,12 +61,6 @@
           <input class="form-control" th:classappend="${#fields.hasErrors('image') ? 'is-invalid' : ''}" type="file" name="file">
           <div th:if="${#fields.hasErrors('image')}" th:errors="*{image}" class="invalid-feedback"></div>
 
-          <label class="col-form-label">Odaberite kategoriju proizvoda</label>
-          <select class="form-control" th:classappend="${#fields.hasErrors('category') ? 'is-invalid' : ''}"  th:field="*{category}">
-            <option value="">Odaberite kategoriju</option>
-            <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
-          </select>
-          <div th:if="${#fields.hasErrors('category')}" th:errors="*{category}" class="invalid-feedback"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>

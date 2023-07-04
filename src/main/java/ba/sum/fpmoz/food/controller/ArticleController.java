@@ -1,10 +1,8 @@
 package ba.sum.fpmoz.food.controller;
 
 import ba.sum.fpmoz.food.model.Article;
-import ba.sum.fpmoz.food.model.Category;
 import ba.sum.fpmoz.food.model.UserDetails;
 import ba.sum.fpmoz.food.repositories.ArticleRepository;
-import ba.sum.fpmoz.food.repositories.CategoryRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -32,9 +29,6 @@ public class ArticleController {
     @Autowired
     ArticleRepository articleRepo;
 
-    @Autowired
-    CategoryRepository categoryRepo;
-
     private static String UPLOADED_FOLDER = "./uploads/";
 
 
@@ -46,7 +40,6 @@ public class ArticleController {
         model.addAttribute("article", new Article());
         model.addAttribute("articles", articleRepo.findAll());
         model.addAttribute("added", false);
-        model.addAttribute("categories", categoryRepo.findAll());
         model.addAttribute("activeLink", "Proizvodi");
         return "articles";
     }
@@ -66,7 +59,6 @@ public class ArticleController {
         model.addAttribute("user", user);
         Article article = articleRepo.findById(id).orElseThrow(() -> new IllegalArgumentException());
         model.addAttribute("article", article);
-        model.addAttribute("categories", categoryRepo.findAll());
         model.addAttribute("activeLink", "Proizvodi");
         return "article_edit";
     }
@@ -93,7 +85,6 @@ public class ArticleController {
             UserDetails user = (UserDetails) auth.getPrincipal();
             model.addAttribute("user", user);
             model.addAttribute("article", article);
-            model.addAttribute("categories", categoryRepo.findAll());
             model.addAttribute("activeLink", "Proizvodi");
             return "article_edit";
         }
@@ -128,7 +119,6 @@ public class ArticleController {
             model.addAttribute("article", article);
             model.addAttribute("added", true);
             model.addAttribute("articles", articleRepo.findAll());
-            model.addAttribute("categories", categoryRepo.findAll());
             return "articles";
         }
         articleRepo.save(article);
