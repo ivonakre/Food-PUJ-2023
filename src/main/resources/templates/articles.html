@@ -7,7 +7,7 @@
 <body layout:fragment="content">
 <div class="row">
   <div class="col d-flex justify-content-between align-items-center">
-    <h1>Svi proizvodi</h1>
+    <h1>Prikaz svih dostupnih fast food proizvoda</h1>
     <button data-toggle="tooltip" data-placement="top" title="Dodaj proizvod" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addArticle"><i class="fa-solid fa-plus"></i></button>
   </div>
 </div>
@@ -28,8 +28,8 @@
     <td><a th:href="${article.getImage()}" th:text="${article.getImage()}"></a></td>
     <td class="d-flex align-items-center justify-content-center">
       <div class="btn-group" role="group">
-        <a data-toggle="tooltip" data-placement="top" title="Briši artikal" class="btn btn-sm btn-danger" th:href="@{/article/delete/{id}(id=${article.getId()})}"><i class="fa-solid fa-eraser"></i></a>
-        <a data-toggle="tooltip" data-placement="top" title="Uredi artikal" class="btn btn-sm btn-secondary" th:href="@{/article/edit/{id}(id=${article.getId()})}"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a data-toggle="tooltip" data-placement="top" title="Briši proizvod" class="btn btn-sm btn-danger" th:href="@{/article/delete/{id}(id=${article.getId()})}"><i class="fa-solid fa-eraser"></i></a>
+        <a data-toggle="tooltip" data-placement="top" title="Uredi proizvod" class="btn btn-sm btn-secondary" th:href="@{/article/edit/{id}(id=${article.getId()})}"><i class="fa-solid fa-pen-to-square"></i></a>
       </div>
     </td>
   </tr>
@@ -57,7 +57,7 @@
           <input class="form-control" th:classappend="${#fields.hasErrors('price') ? 'is-invalid' : ''}" type="number" th:field="*{price}" step=".05">
           <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="invalid-feedback"></div>
 
-          <label class="col-form-label">Odaberite sliku proizvoda:</label>
+          <label class="col-form-label">Odaberite sliku:</label>
           <input class="form-control" th:classappend="${#fields.hasErrors('image') ? 'is-invalid' : ''}" type="file" name="file">
           <div th:if="${#fields.hasErrors('image')}" th:errors="*{image}" class="invalid-feedback"></div>
 

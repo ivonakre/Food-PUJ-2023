@@ -48,7 +48,7 @@ public class WebSecurityConfig {
                 .loginPage("/login")
                 .permitAll()
                 .usernameParameter("email")
-                .defaultSuccessUrl("/categories", true)
+                .defaultSuccessUrl("/articles", true)
                 .permitAll()
                 .and()
                 .logout().logoutSuccessUrl("/").permitAll();

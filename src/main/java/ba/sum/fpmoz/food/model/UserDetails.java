@@ -1,7 +1,6 @@
 package ba.sum.fpmoz.food.model;
 
 import org.springframework.security.core.GrantedAuthority;
-
 import java.util.Collection;
 
 public class UserDetails implements org.springframework.security.core.userdetails.UserDetails {

@@ -2,9 +2,7 @@ package ba.sum.fpmoz.food.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-
 import java.util.List;
 
 @Entity
@@ -26,15 +24,16 @@ public class Article {
     @NotNull(message = "Molimo unesite cijenu proizvoda.")
     Float price;
 
-
     @Column(nullable = false)
     String image;
 
+    @ManyToMany(mappedBy = "articles")
+    List<Invoice> invoices;
 
     public Article() {
     }
 
-    public Article(Long id, String name, String description, Float price, String image, String unit) {
+    public Article(Long id, String name, String description, Float price, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -80,6 +79,14 @@ public class Article {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public List<Invoice> getInvoices() {
+        return invoices;
+    }
+
+    public void setInvoices(List<Invoice> invoices) {
+        this.invoices = invoices;
     }
 
 }

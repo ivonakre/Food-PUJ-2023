@@ -1,8 +1,8 @@
 package ba.sum.fpmoz.food.controller;
 
 import ba.sum.fpmoz.food.model.Article;
-import ba.sum.fpmoz.food.model.UserDetails;
 import ba.sum.fpmoz.food.repositories.ArticleRepository;
+import ba.sum.fpmoz.food.model.UserDetails;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -27,7 +28,7 @@ import java.nio.file.Paths;
 public class ArticleController {
 
     @Autowired
-    ArticleRepository articleRepo;
+    ArticleRepository articleRepository;
 
     private static String UPLOADED_FOLDER = "./uploads/";
 
@@ -38,7 +39,7 @@ public class ArticleController {
         UserDetails user = (UserDetails) auth.getPrincipal();
         model.addAttribute("user", user);
         model.addAttribute("article", new Article());
-        model.addAttribute("articles", articleRepo.findAll());
+        model.addAttribute("articles", articleRepository.findAll());
         model.addAttribute("added", false);
         model.addAttribute("activeLink", "Proizvodi");
         return "articles";
@@ -46,8 +47,8 @@ public class ArticleController {
 
     @GetMapping("/article/delete/{id}")
     public String deleteArticle(@PathVariable("id") Long id, Model model) throws IOException {
-        Article article = articleRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Pogrešan ID"));
-        articleRepo.delete(article);
+        Article article = articleRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Pogrešan ID"));
+        articleRepository.delete(article);
         Files.delete(Path.of(article.getImage()));
         return "redirect:/articles";
     }
@@ -57,7 +58,7 @@ public class ArticleController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserDetails user = (UserDetails) auth.getPrincipal();
         model.addAttribute("user", user);
-        Article article = articleRepo.findById(id).orElseThrow(() -> new IllegalArgumentException());
+        Article article = articleRepository.findById(id).orElseThrow(() -> new IllegalArgumentException());
         model.addAttribute("article", article);
         model.addAttribute("activeLink", "Proizvodi");
         return "article_edit";
@@ -88,7 +89,7 @@ public class ArticleController {
             model.addAttribute("activeLink", "Proizvodi");
             return "article_edit";
         }
-        articleRepo.save(article);
+        articleRepository.save(article);
         return "redirect:/articles";
     }
 
@@ -118,10 +119,10 @@ public class ArticleController {
         if (result.hasErrors()) {
             model.addAttribute("article", article);
             model.addAttribute("added", true);
-            model.addAttribute("articles", articleRepo.findAll());
+            model.addAttribute("articles", articleRepository.findAll());
             return "articles";
         }
-        articleRepo.save(article);
+        articleRepository.save(article);
         return "redirect:/articles";
     }
 }

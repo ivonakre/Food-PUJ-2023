@@ -10,6 +10,7 @@
     <div class="col">
       <h4>Uređivanje proizvoda</h4>
       <form th:object="${article}" th:action="@{/article/edit/{id}(id=${article.getId()})}" method="POST" enctype="multipart/form-data">
+
         <label class="col-form-label">Unesite naziv proizvoda:</label>
         <input class="form-control" th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}" type="text" th:field="*{name}">
         <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="invalid-feedback"></div>
@@ -18,15 +19,16 @@
         <input class="form-control" th:classappend="${#fields.hasErrors('description') ? 'is-invalid' : ''}" type="text" th:field="*{description}">
         <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="invalid-feedback"></div>
 
-        <label class="col-form-label">Unesite cijenu proizvoda:</label>
+        <label class="col-form-label">Unesite cijenu proida:</label>
         <input class="form-control" th:classappend="${#fields.hasErrors('price') ? 'is-invalid' : ''}" type="number" th:field="*{price}" step=".05">
         <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="invalid-feedback"></div>
 
-        <label class="col-form-label">Odaberite sliku proizvoda:</label>
+        <label class="col-form-label">Odaberite sliku:</label>
         <input class="form-control" th:classappend="${#fields.hasErrors('image') ? 'is-invalid' : ''}" type="file" name="file">
         <div th:if="${#fields.hasErrors('image')}" th:errors="*{image}" class="invalid-feedback"></div>
 
-        <button type="submit" class="btn btn-primary mt-3">Uredi proizvod</button>
+        <button type="submit" class="btn btn-primary mt-3">Uredi</button>
+        <a href="/article" class="btn btn-secundary mt-3">Proizvod</a>
       </form>
     </div>
   </div>

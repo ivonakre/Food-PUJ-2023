@@ -9,4 +9,4 @@ COPY --from=build /home/app/target/Food-0.0.1-SNAPSHOT.jar /app/food.jar
 RUN mkdir /app/uploads
 WORKDIR /app
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/app/restoran.jar"]
+ENTRYPOINT ["java","-jar","/app/food.jar"]

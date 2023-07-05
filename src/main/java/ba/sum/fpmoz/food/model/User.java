@@ -1,11 +1,9 @@
 package ba.sum.fpmoz.food.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-
 import java.util.List;
 
 @Entity
@@ -37,6 +35,8 @@ public class User {
     @Column(nullable = false)
     private String role;
 
+    @OneToMany(mappedBy = "user")
+    List<Article> articles;
     @OneToMany(mappedBy = "user")
     List<Invoice> invoices;
 
@@ -98,6 +98,14 @@ public class User {
 
     public String getRole() {
         return role;
+    }
+
+    public List<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
     }
 
     public List<Invoice> getInvoices() {
