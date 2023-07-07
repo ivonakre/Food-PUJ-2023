@@ -19,7 +19,7 @@
         <input class="form-control" th:classappend="${#fields.hasErrors('description') ? 'is-invalid' : ''}" type="text" th:field="*{description}">
         <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="invalid-feedback"></div>
 
-        <label class="col-form-label">Unesite cijenu proida:</label>
+        <label class="col-form-label">Unesite cijenu proizvoda:</label>
         <input class="form-control" th:classappend="${#fields.hasErrors('price') ? 'is-invalid' : ''}" type="number" th:field="*{price}" step=".05">
         <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="invalid-feedback"></div>
 
