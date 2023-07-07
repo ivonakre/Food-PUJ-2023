@@ -8,7 +8,7 @@
 - Ranting
 
 ### _Relacijski model baze podataka implementiran u draw.io:_
-![RFF](rff.png)
+![rff](https://github.com/ivonakre/Food-PUJ-2023/assets/93091530/ef55f7b4-d2d7-4ab1-9e8f-e8797c69f806)
 
 U projektu je korišteno niz tehnologija, uključujući:
 - IntelliJ IDEA razvojno okruženje - jedno od najpopularnijih okruženja za razvoj aplikacija u Javi.
