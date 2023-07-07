@@ -40,6 +40,9 @@ public class User {
     @OneToMany(mappedBy = "user")
     List<Invoice> invoices;
 
+    @OneToMany(mappedBy = "user")
+    List<Rating> ratings;
+
     public User(Long id, String firstname, String lastname, String email, String password, String role) {
         this.id = id;
         this.firstname = firstname;
@@ -92,20 +95,12 @@ public class User {
         this.password = password;
     }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     public String getRole() {
         return role;
     }
 
-    public List<Article> getArticles() {
-        return articles;
-    }
-
-    public void setArticles(List<Article> articles) {
-        this.articles = articles;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public List<Invoice> getInvoices() {
@@ -114,6 +109,14 @@ public class User {
 
     public void setInvoices(List<Invoice> invoices) {
         this.invoices = invoices;
+    }
+
+    public List<Rating> getRantings() {
+        return ratings;
+    }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
     }
 
     public String getPasswordRepeat() {

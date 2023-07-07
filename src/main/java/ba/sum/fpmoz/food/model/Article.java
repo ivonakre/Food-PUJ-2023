@@ -27,8 +27,14 @@ public class Article {
     @Column(nullable = false)
     String image;
 
+    @Column(nullable = false)
+    Integer rating_number;
+
     @ManyToMany(mappedBy = "articles")
     List<Invoice> invoices;
+
+    @OneToMany(mappedBy = "article")
+    List<Rating> ratings;
 
     public Article() {
     }
@@ -39,6 +45,7 @@ public class Article {
         this.description = description;
         this.price = price;
         this.image = image;
+        this.rating_number = rating_number;
     }
 
     public Long getId() {
@@ -81,6 +88,22 @@ public class Article {
         this.image = image;
     }
 
+    public Integer getRating_number() {
+        return rating_number;
+    }
+
+    public void setRating_number(Integer rating_number) {
+        this.rating_number = rating_number;
+    }
+
+    public List<Rating> getRantings() {
+        return ratings;
+    }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
+    }
+
     public List<Invoice> getInvoices() {
         return invoices;
     }
@@ -88,5 +111,4 @@ public class Article {
     public void setInvoices(List<Invoice> invoices) {
         this.invoices = invoices;
     }
-
 }

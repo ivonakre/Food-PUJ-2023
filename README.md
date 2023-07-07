@@ -1,18 +1,22 @@
 # Programiranje u Javi
+# **Naziv projekta je Fast Food**
 
-**Naziv projekta:** Fast Food
+## Baza podataka ima 4 tablice, a to su:
+- Users
+- Articles
+- Invoice
+- Ranting
 
+### _Relacijski model baze podataka implementiran u draw.io:_
+![RFF](rff.png)
 
-Korišteno je niz modernih tehnologija, uključujući:
-
-- Spring Boot programsko okruženje, snažno i fleksibilno rješenje za razvoj standalone i cloud-ready Spring aplikacija.
-- Relacijske baze podataka (MySQL), kao što je MySQL, koji je najpoznatiji open source sustav za upravljanje bazama podataka na svijetu.
-- Docker tehnologija, industrijski standard za izradu, pakiranje i distribuciju aplikacija u obliku kontejnera.
-- Git sustav za kontrolu verzija, jedan od najraširenijih alata svoje vrste, omogućujući timovima da učinkovito upravljaju izvornim kodom.
-- Oracle Cloud Platform (OCP), vrhunska platforma za cloud računalstvo koja nudi širok spektar usluga i rješenja.
-- IntelliJ IDEA razvojno okruženje, jedno od najpopularnijih okruženja za razvoj aplikacija u Javi.
-
-
+U projektu je korišteno niz tehnologija, uključujući:
+- IntelliJ IDEA razvojno okruženje - jedno od najpopularnijih okruženja za razvoj aplikacija u Javi.
+- Spring Boot programsko okruženje - snažno i fleksibilno rješenje za razvoj standalone i cloud-ready Spring aplikacija.
+- Relacijske baze podataka (MySQL) - kao što je MySQL, koji je najpoznatiji open source sustav za upravljanje bazama podataka na svijetu.
+- Docker tehnologija - industrijski standard za izradu, pakiranje i distribuciju aplikacija u obliku kontejnera.
+- Git sustav za kontrolu verzija - jedan od najraširenijih alata svoje vrste, omogućujući timovima da učinkovito upravljaju izvornim kodom.
+- Oracle Cloud Platform (OCP) - vrhunska platforma za cloud računalstvo koja nudi širok spektar usluga i rješenja.
 
 Aplikacija je oblikovana tako da pruža niz funkcionalnosti, uključujući:
 
